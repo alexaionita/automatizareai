@@ -1,0 +1,158 @@
+:root {
+  --bg: #1C2430;
+  --ink: #F2F4F6;
+  --muted: #A7B0BA;
+  --accent: #4A5665;
+  --soft: #2F3B4A;
+  --border: rgba(167, 176, 186, 0.2); 
+  --shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
+  --gold-accent: #D4AF37; /* Default = Auriu pe index.html */
+  --green-ios: #4cd964;
+}
+
+/* Pe pagina de demo, auriul devine alb */
+body.demo-page {
+  --gold-accent: #FFFFFF;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--ink);
+  font-family:"Manrope", sans-serif;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+
+.scroll-appear { opacity:0; transform:translateY(30px); transition: 0.8s ease; }
+.scroll-appear.visible { opacity:1; transform:translateY(0); }
+
+/* HERO */
+.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 0 20px; }
+.hero-title { font-family:"Bodoni Moda", serif; letter-spacing:0.16em; text-transform:uppercase; font-size:clamp(40px, 8vw, 100px); line-height:0.92; }
+.hero-subtitle { margin-top:18px; font-family:"Bodoni Moda", serif; letter-spacing:0.28em; text-transform:uppercase; color:var(--muted); font-size:14px; }
+.hero-tagline { margin-top: 25px; font-family:"Bodoni Moda", serif; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-size: 13px; font-weight: 300; }
+
+/* NAV */
+.quick-nav { padding:40px 20px; }
+.quick-grid { max-width:900px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.quick-card { border:1px solid var(--border); border-radius:18px; padding:30px 15px; text-decoration:none; background:rgba(47, 59, 74, 0.4); transition: 0.3s; display:flex; flex-direction:column; align-items:center; gap:12px; color:var(--ink); }
+.quick-card:hover { border-color:var(--gold-accent); background:rgba(74, 86, 101, 0.5); transform:translateY(-5px); }
+.quick-card i { font-size:24px; color:var(--gold-accent); }
+.quick-card span { font-size:10px; letter-spacing:1.2px; font-weight:700; text-transform:uppercase; }
+
+.section-title { text-align:center; font-family:"Bodoni Moda", serif; letter-spacing:0.12em; text-transform:uppercase; font-size:clamp(28px, 5vw, 54px); margin:100px 0 60px; }
+
+/* STRATEGY */
+.strategy, .how-it-looks, .growth { padding:100px 20px; }
+#strategyStage { max-width:800px; margin:auto; border-radius:24px; border:1px solid var(--border); background:rgba(47, 59, 74, 0.2); padding:25px; cursor:pointer; min-height: 250px; text-align: center; }
+.strategy-message { margin: 10px auto; padding: 18px; border-radius: 16px; background: rgba(47, 59, 74, 0.6); display: flex; gap: 15px; text-align: left; opacity:0; transform: translateY(15px); transition: 0.5s; }
+.strategy-message.animate { opacity:1; transform: translateY(0); }
+.strategy-message i { color: var(--gold-accent); }
+.tap-hint { font-size: 10px; color: var(--muted); margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* FLOW DESCRIPTION */
+.flow-description { max-width: 800px; margin: 0 auto 80px; text-align: center; font-size: clamp(18px, 2.5vw, 28px); line-height: 1.5; color: var(--ink); padding: 0 20px; }
+
+/* VISUAL DEMO BOXES */
+.visual-demo-container { display: flex; flex-direction: column; align-items: center; gap: 100px; max-width: 1000px; margin: 0 auto; }
+.demo-box { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 25px; text-align: center; }
+.demo-label { max-width: 400px; }
+.demo-label strong { display: block; font-size: 18px; color: var(--ink); margin-bottom: 8px; }
+.demo-label p { font-size: 14px; color: var(--muted); }
+
+/* IG MOCKUP */
+.ig-mockup { width: 100%; max-width: 350px; background: var(--soft); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); text-align: left; }
+.ig-header { padding: 12px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+.ig-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--gold-accent); padding: 2px; }
+.ig-username { font-size: 12px; font-weight: 700; flex: 1; }
+.ig-image { width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, #2c3e50, #000); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: "Bodoni Moda"; letter-spacing: 2px; color: rgba(255,255,255,0.3); font-size: 12px; }
+.ig-actions { padding: 12px; display: flex; gap: 15px; font-size: 18px; }
+.ig-caption { padding: 0 12px 20px; font-size: 13px; min-height: 80px; }
+.cursor { animation: blink 1s infinite; color: var(--gold-accent); }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* CALENDAR (Index) */
+.calendar-mockup { width: 100%; max-width: 450px; background: rgba(47, 59, 74, 0.4); border-radius: 24px; border: 1px solid var(--border); padding: 25px; box-shadow: var(--shadow); }
+.cal-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 11px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cal-day { aspect-ratio: 1/1; background: rgba(0,0,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.cal-post { width: 60%; height: 60%; background: var(--gold-accent); border-radius: 5px; opacity: 0; transform: scale(0.4); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.cal-post.active { opacity: 1; transform: scale(1); }
+
+/* SCHEDULE MOCKUP (Demo) */
+.schedule-mockup { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 12px; }
+.schedule-item { background: rgba(47, 59, 74, 0.4); border: 1px solid var(--border); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 15px; opacity: 0; transform: translateX(-20px); transition: 0.5s ease; box-shadow: var(--shadow); }
+.schedule-item.active { opacity: 1; transform: translateX(0); }
+.sched-time { font-size: 11px; color: var(--muted); font-weight: 700; width: 85px; text-align: left; }
+.sched-thumb { width: 40px; height: 40px; background: linear-gradient(45deg, #121212, #2a2a2a); border-radius: 8px; border: 1px solid var(--border); display:flex; align-items:center; justify-content:center; color: var(--gold-accent); font-size: 16px;}
+.sched-info { flex: 1; text-align: left; }
+.sched-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.sched-status { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold-accent); display: flex; align-items: center; gap: 5px; }
+
+/* CHAT MOCKUP (Demo) */
+.chat-mockup { width: 100%; max-width: 350px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); }
+.chat-header { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); text-align: center; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 5px; }
+.chat-bubble { max-width: 85%; padding: 12px 16px; border-radius: 18px; font-size: 12px; line-height: 1.4; opacity: 0; transform: translateY(10px); transition: 0.5s ease; text-align: left; }
+.chat-bubble.active { opacity: 1; transform: translateY(0); }
+.chat-client { background: var(--soft); color: var(--ink); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--border); }
+.chat-ai { background: var(--gold-accent); color: #000; align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 600; }
+
+/* IPHONE NOTIFICATION */
+.iphone-notification { width: 100%; max-width: 350px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.2); padding: 18px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); opacity: 0; transform: translateY(-20px); transition: 0.8s; text-align: left; }
+.iphone-notification.active { opacity: 1; transform: translateY(0); }
+.notif-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.notif-app-icon { width: 20px; height: 20px; background: #ff3b30; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; }
+.notif-app-name { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+.notif-body strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.notif-body p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.4; }
+.notif-status { margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: var(--green-ios); font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+/* IMPACT */
+.growth { max-width: 1100px; margin: 0 auto; text-align: center; }
+.growth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 50px; }
+.metric-card { background: rgba(47, 59, 74, 0.3); border: 1px solid var(--border); border-radius: 24px; padding: 40px 20px; transition: 0.4s; }
+.metric-card:hover { border-color: var(--gold-accent); }
+.metric-number { font-size: 50px; font-weight: 800; font-family: "Bodoni Moda", serif; color: var(--ink); }
+.metric-unit { color: var(--gold-accent); font-size: 24px; }
+.metric-label { font-size: 11px; text-transform: uppercase; color: var(--muted); margin-top: 10px; font-weight: 700; letter-spacing: 1px; }
+.progress-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.05); border-radius: 10px; margin-top: 20px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--gold-accent); width: 0; transition: 1.5s ease-out; }
+
+/* GRAPH SECTION */
+.graph-container { margin: 60px auto; max-width: 600px; position: relative; }
+.growth-graph { width: 100%; overflow: visible; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3)); }
+body.demo-page .growth-graph { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); }
+#graphLine { stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 3s ease-in-out; stroke: var(--gold-accent); }
+.graph-container.visible #graphLine { stroke-dashoffset: 0; }
+.graph-label { font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-top: 25px; font-weight: 600; }
+
+/* PRICING */
+.pricing { padding: 100px 20px; background: rgba(0,0,0,0.1); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; align-items: stretch; }
+.price-card { background: rgba(47, 59, 74, 0.3); border: 1px solid var(--border); border-radius: 30px; padding: 50px 30px; display: flex; flex-direction: column; position: relative; transition: 0.4s; text-align: center; }
+.price-card:hover { transform: translateY(-10px); border-color: var(--gold-accent); }
+.price-card h3 { font-family: "Bodoni Moda", serif; font-size: 20px; letter-spacing: 2px; margin-bottom: 20px; }
+.price { font-size: 48px; font-weight: 800; font-family: "Bodoni Moda", serif; margin-bottom: 5px; }
+.price span { font-size: 16px; color: var(--muted); font-weight: 400; }
+.price-desc { font-size: 13px; color: var(--gold-accent); font-weight: 700; margin-bottom: 30px; letter-spacing: 0.5px; }
+.price-features { list-style: none; text-align: left; margin-bottom: 30px; flex-grow: 1; }
+.price-features li { font-size: 13px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--muted); }
+.price-features li i { color: var(--gold-accent); font-size: 11px; }
+.price-saving { font-weight: 800; font-size: 12px; text-transform: uppercase; color: var(--ink); border-top: 1px solid var(--border); padding-top: 20px; margin-bottom: 25px; letter-spacing: 1px; }
+
+.featured { border-color: var(--gold-accent); background: rgba(212, 175, 55, 0.05); }
+body.demo-page .featured { background: rgba(255, 255, 255, 0.05); }
+.popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gold-accent); color: #000; font-size: 9px; font-weight: 900; padding: 6px 18px; border-radius: 20px; letter-spacing: 1.5px; }
+
+/* CTA BUTTONS */
+.cta-button { display: block; width: fit-content; margin: 30px auto 0; padding: 18px 45px; background: var(--ink); color: var(--bg); text-decoration: none; border-radius: 100px; font-weight: 800; font-size: 10px; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.cta-button:hover { transform: scale(1.05); background: var(--gold-accent); color: #fff; }
+body.demo-page .cta-button:hover { background: #FFF; color: #000; }
+.plan-btn { width: 100%; margin: 0; }
+.plan-btn.gold { background: var(--gold-accent); color: #000; }
+.gold { background: var(--gold-accent); color: #000; }
+
+@media (max-width: 950px) {
+  .growth-grid, .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .pricing-grid { gap: 40px; }
+}
